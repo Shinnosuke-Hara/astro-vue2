@@ -9,5 +9,9 @@
   },
   "devDependencies": {
     "turbo": "^1.7.3"
+  },
+  "dependencies": {
+    "@bend-corp/md-editor": "^2.5.4",
+    "@bend-corp/md-editor-new": "^3.1.1"
   }
 }

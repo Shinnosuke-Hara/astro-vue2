@@ -1,26 +1,36 @@
 <template>
-  <div>
-    <button v-on:click="handleClick">Vue2 counter: {{ value }}</button>
-    <p>slot: <slot /></p>
-  </div>
+  <v-container>
+    <div class="mb-4" style="height: 600px">
+      <v-editor v-model="item" />
+    </div>
+  </v-container>
 </template>
 
 <script>
+import "@bend-corp/md-editor-new/dist/VEditor/index.css";
+import VEditor from "@bend-corp/md-editor-new/dist/VEditor/index.common.js";
+
 export default {
+  name: "Counter",
+
+  components: {
+    VEditor,
+  },
+
   props: {
-    defaultValue: {
-      type: Number,
-      required: true,
+    ssss: {
+      default: "",
     },
   },
-  data() {
-    return {
-      value: this.defaultValue,
-    };
-  },
-  methods: {
-    handleClick() {
-      return this.value++;
+
+  computed: {
+    item: {
+      get() {
+        return this.ssss;
+      },
+      set(v) {
+        this.$emit("input", v);
+      },
     },
   },
 };

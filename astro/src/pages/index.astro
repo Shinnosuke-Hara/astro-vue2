@@ -10,9 +10,7 @@ import Layout from "../layouts/Layout.astro";
 
 <Layout title="Astro and Vue2">
   <main>
-    <Counter defaultValue={10} client:visible>
-      <Child name={"Astro component"} />
-    </Counter>
+    <Counter ssss="## Heading" client:only="astro-vue2"    />
     <ClientOnly client:only="astro-vue2" />
   </main>
 </Layout>

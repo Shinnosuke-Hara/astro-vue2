@@ -1,36 +1,19 @@
 <template>
-  <v-container>
-    <div class="mb-4" style="height: 600px">
-      <v-editor v-model="item" />
-    </div>
-  </v-container>
+  <v-previewer :value="src" />
 </template>
 
 <script>
-import "@bend-corp/md-editor-new/dist/VEditor/index.css";
-import VEditor from "@bend-corp/md-editor-new/dist/VEditor/index.common.js";
-
+import "@bend-corp/md-editor-new/dist/VPreviewer/index.css";
+import VPreviewer from "@bend-corp/md-editor-new/dist/VPreviewer/index.common.js";
 export default {
-  name: "Counter",
-
+  name: "AMd",
   components: {
-    VEditor,
+    VPreviewer,
   },
-
   props: {
-    ssss: {
+    src: {
+      type: String,
       default: "",
-    },
-  },
-
-  computed: {
-    item: {
-      get() {
-        return this.ssss;
-      },
-      set(v) {
-        this.$emit("input", v);
-      },
     },
   },
 };
